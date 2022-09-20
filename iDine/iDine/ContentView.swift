@@ -18,13 +18,14 @@ struct ContentView: View {
                     // SwitUI already has a section/header functionality ready to use
                     Section(header : Text(section.name)){
                         ForEach(section.items){ item in
-                            Text(item.name)
+//                            Text(item.name)
+                            ItemRow(item: item)
                         }
                     }
                 }
             }
             .navigationTitle("Menu")// applied to List
-            // .listStyle() no longer available to List()
+            // .listStyle() no longer available to List() as shown in tutorial
         }
     }
 }

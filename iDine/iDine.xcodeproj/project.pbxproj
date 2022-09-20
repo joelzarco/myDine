@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		961A0EEB28DA7AD500EEE782 /* ItemRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 961A0EEA28DA7AD500EEE782 /* ItemRow.swift */; };
 		964476EC28D2788500239667 /* iDineApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 964476EB28D2788500239667 /* iDineApp.swift */; };
 		964476EE28D2788500239667 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 964476ED28D2788500239667 /* ContentView.swift */; };
 		964476F028D2788700239667 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 964476EF28D2788700239667 /* Assets.xcassets */; };
@@ -18,6 +19,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		961A0EEA28DA7AD500EEE782 /* ItemRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemRow.swift; sourceTree = "<group>"; };
 		964476E828D2788500239667 /* iDine.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iDine.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		964476EB28D2788500239667 /* iDineApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iDineApp.swift; sourceTree = "<group>"; };
 		964476ED28D2788500239667 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -61,6 +63,7 @@
 			children = (
 				964476EB28D2788500239667 /* iDineApp.swift */,
 				964476ED28D2788500239667 /* ContentView.swift */,
+				961A0EEA28DA7AD500EEE782 /* ItemRow.swift */,
 				964476F928D278F900239667 /* Helper.swift */,
 				964476FB28D2795300239667 /* Menu.swift */,
 				964476FC28D2795300239667 /* Order.swift */,
@@ -153,6 +156,7 @@
 				964476EE28D2788500239667 /* ContentView.swift in Sources */,
 				964476EC28D2788500239667 /* iDineApp.swift in Sources */,
 				964476FE28D2795300239667 /* Order.swift in Sources */,
+				961A0EEB28DA7AD500EEE782 /* ItemRow.swift in Sources */,
 				964476FD28D2795300239667 /* Menu.swift in Sources */,
 				964476FA28D278F900239667 /* Helper.swift in Sources */,
 			);
