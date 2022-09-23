@@ -18,8 +18,10 @@ struct ContentView: View {
                     // SwitUI already has a section/header functionality ready to use
                     Section(header : Text(section.name)){
                         ForEach(section.items){ item in
-//                            Text(item.name)
-                            ItemRow(item: item)
+                            // the whole row becomes a navLink
+                            NavigationLink(destination: ItemDetail(item: item)){
+                                ItemRow(item: item)// new view with only menu item text!
+                            }
                         }
                     }
                 }
