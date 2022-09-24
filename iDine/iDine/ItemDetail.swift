@@ -8,6 +8,9 @@
 import SwiftUI
 
 struct ItemDetail: View {
+    // publish changes
+    @EnvironmentObject var order : Order // no need to init, set in enviroment
+    
     let item : MenuItem
     
     var body: some View {
@@ -27,6 +30,11 @@ struct ItemDetail: View {
             }
             Text(item.description)
                 .padding()
+            
+            Button("Order this"){
+                order.add(item: item)
+            }.font(.headline)
+            
             Spacer()// to move everything to the top
         }.navigationTitle(item.name)
             .navigationBarTitleDisplayMode(.inline) // in order to be smaller and meet apple's HIG

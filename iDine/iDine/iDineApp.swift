@@ -9,9 +9,13 @@ import SwiftUI
 
 @main
 struct iDineApp: App {
+    // order created at launch and live through app's lifecycle
+    @StateObject var order = Order()
+    // must conform to Observable protocol. Order.items will be the "publisher"
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            MainView()
+                .environmentObject(order) // inject into contentView() in order to use it
         }
     }
 }
