@@ -51,7 +51,10 @@ struct CheckOutView: View {
                 }
                 
             }
-            Section(header : Text("Add a tip?")){
+            Section(header :
+                        Text("Add a tip?")
+                            
+            ){
                 Picker("Percentage : ", selection: $tipAmount){
                     ForEach(tipAmounts, id: \.self){
                         Text("\($0)")
@@ -60,7 +63,10 @@ struct CheckOutView: View {
                 .pickerStyle(SegmentedPickerStyle())
             }
             
-            Section(header : Text("Total : \(totalPrice)")){
+            Section(header :
+                        Text("Total : \(totalPrice)")
+                            .font(.largeTitle)
+            ){
                 Button("Confirm order"){// tintColor is automatically le
                     print("Confirm order tapped")
                     // in order to show alert binding mut be true

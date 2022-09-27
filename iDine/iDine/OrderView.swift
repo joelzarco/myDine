@@ -24,15 +24,25 @@ struct OrderView: View {
                             Text("$\(item.price)")
                         }
                     }
+                    .onDelete(perform: deleteItems) // swipeLeft gesture already built for us!
                 }
                 Section{
                     NavigationLink(destination : CheckOutView()){
                         Text("Place order")
                     }
-                }
-            }.navigationTitle("Order")
+                }// disable view of array isEmpty, no longer able to navigate to checkoutView
+                .disabled(order.items.isEmpty)
+            }
+                .navigationTitle("Order")
                 .listStyle(InsetGroupedListStyle())
+                .toolbar{
+                    EditButton()
+                }
         }
+    }
+    // remove items to the view
+    func deleteItems(at offsets : IndexSet){
+        order.items.remove(atOffsets: offsets)
     }
 }
 
