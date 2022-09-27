@@ -20,8 +20,21 @@ struct CheckOutView: View {
     @State private var addLoyaltyDetails = false
     @State private var loyalttyNumber = ""
     @State private var tipAmount = 15
+    // state property for showing alert
+    @State private var showingPaymentAlert = false
     
     let tipAmounts = [10, 15, 20, 25, 0]
+    
+    // compouted property for total cost of the order, every time @state tip property is called, total price is re-calculated
+    var totalPrice : String{
+        let formatter = NumberFormatter()
+        formatter.numberStyle = .currency
+        let total = Double(order.total)
+        let tipValue = (total / 100) * Double(tipAmount)
+        
+        return formatter.string(from: NSNumber(value: total + tipValue)) ?? "$0"
+        
+    }
     
     var body: some View {
         Form{// just changed VStack to Form, much better feel!
@@ -47,14 +60,19 @@ struct CheckOutView: View {
                 .pickerStyle(SegmentedPickerStyle())
             }
             
-            Section(header : Text("Total : $100")){
+            Section(header : Text("Total : \(totalPrice)")){
                 Button("Confirm order"){// tintColor is automatically le
-                    // place order
+                    print("Confirm order tapped")
+                    // in order to show alert binding mut be true
+                    showingPaymentAlert.toggle()
                 }
             }
         }
             .navigationTitle("Payment")
             .navigationBarTitleDisplayMode(.inline)
+            .alert(isPresented: $showingPaymentAlert){
+                Alert(title: Text("Order confirmed"), message: Text("Your total was \(totalPrice)"), dismissButton: .default(Text("OK")))
+            }
     }
 }
 
